@@ -2,7 +2,11 @@ const createElements = (arr) => {
     const htmlElements = arr.map((el) => `<span class="btn">${el}</span>`);
     return htmlElements.join(" ");
 };
-
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 // spinner function 
 const manageSpinner = (status) => {
     if (status == true) {
@@ -47,7 +51,7 @@ const loadLevelWord = (id) => {
 
 // Function to load word details from API
 const loadWordDetail = async (id) => {
-    manageSpinner(true);
+   
     const url = `https://openapi.programming-hero.com/api/word/${id}`;
     const res = await fetch(url);
     const details = await res.json();
@@ -103,7 +107,7 @@ const displayWordDetails = (word) => {
   `;
 
     document.getElementById("word_modal").showModal();
-    manageSpinner(false);
+    
 };
 
 
@@ -150,7 +154,7 @@ const displayLevelWord = (words) => {
                     </button>
 
                     <!-- Volume Button -->
-                    <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
+                    <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
                         <i class="fa-solid fa-volume-high"></i>
                     </button>
                 </div>
