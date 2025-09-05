@@ -96,10 +96,26 @@
             <div id="level-container" class="flex gap-5 flex-wrap justify-center"></div>
 
         </section>
+
+        <!-- search word  -->
+        <section class="flex justify-center mt-7">
+            <div class="join">
+                <div>
+                    <label class="input validator join-item">
+                       
+                        <input id="input-search" type="text" placeholder="Search Word" required />
+                    </label>
+                    
+                </div>
+                <button id="btn-search" class="btn btn-primary join-item">Search</button>
+            </div>
+
+        </section>
+
         <!-- loading section  -->
-         <section id="spinner" class="flex justify-center items-center py-10 hidden">
+        <section id="spinner" class="flex justify-center items-center py-10 hidden">
             <span class="loading loading-bars loading-xl"></span>
-         </section>
+        </section>
 
         <section id="word-container" class="bg-gray-100 p-10 w-11/12 mx-auto my-10 grid grid-cols-3 gap-5">
 
@@ -117,9 +133,9 @@
         <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
         <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
-                
+
                 <div id="details-container" class="space-y-6">
-                  
+
 
 
                 </div>
